@@ -15,9 +15,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
   title: "Book Vibe",
   description: "Books to freshen up your bookshelf",
+  icons: {
+    icon: "/book-vibe-icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
