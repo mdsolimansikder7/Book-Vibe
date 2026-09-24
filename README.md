@@ -1,11 +1,11 @@
 # 📚 Book Vibe
 
 <p align="center">
-  <strong>A modern and responsive book listing web application built with Next.js and TypeScript.</strong>
+  A modern and responsive book listing web application built with Next.js and TypeScript.
 </p>
 
 <p align="center">
-  Browse books, explore details, manage your reading list and wishlist, and visualize your reading progress.
+  Browse books, explore book details, manage your Read and Wishlist lists, and track your reading progress.
 </p>
 
 <p align="center">
@@ -21,33 +21,51 @@
 🚀 **Live Website:**  
 https://book-vibe-liard-two.vercel.app/
 
+💻 **GitHub Repository:**  
+https://github.com/mdsolimansikder7/Book-Vibe
+
 ---
 
 ## 📖 About The Project
 
-**Book Vibe** is a responsive book listing application designed for readers to discover books and organize their reading activities.
+**Book Vibe** is a responsive book listing web application where users can discover books, explore detailed information, organize their reading list, and track their reading progress.
 
-Users can browse books, view detailed information, mark books as **Read**, add books to their **Wishlist**, and visualize the total pages of their read books through an interactive chart.
+Users can:
 
-The project uses local JSON data, React Context API, and browser `localStorage`, so no separate backend or API server is required.
+- Browse available books
+- View detailed book information
+- Mark books as **Read**
+- Add books to their **Wishlist**
+- Sort listed books
+- Navigate between books
+- View their reading progress using a chart
+
+The application uses local JSON data and browser `localStorage`, so **no separate backend or API server is required**.
 
 ---
 
 ## ✨ Features
 
 ### 🏠 Home Page
+
 - Beautiful hero/banner section
-- Featured book section
+- Featured books section
 - Displays a preview of 3 books
 - **View All Books** button
+- Responsive design
 
-### 📚 Books
-- Browse all available books
-- Responsive card layout
-- Book cover, title, author and rating
-- View detailed information
+### 📚 Books Page
+
+- Displays all available books
+- Responsive book card layout
+- Book cover image
+- Book name
+- Author
+- Rating
+- View details option
 
 ### 📖 Book Details
+
 Each book has a dedicated details page containing:
 
 - Book cover
@@ -63,24 +81,34 @@ Each book has a dedicated details page containing:
 - Read button
 - Wishlist button
 
-### ❤️ Read & Wishlist
+### 📖 Read Books
 
-Users can:
+Users can mark books as **Read**.
 
-- Mark a book as **Read**
-- Add a book to **Wishlist**
-- Prevent a Read book from being added to Wishlist
-- Automatically remove a Wishlist book when it is marked as Read
-- Store reading data in browser `localStorage`
+Once a book is marked as Read:
+
+- It is saved in `localStorage`
+- It appears in the Read Books section
+- The same book cannot be added to Wishlist
+
+### ❤️ Wishlist
+
+Users can add books to their Wishlist.
+
+The application also handles the relationship between Read and Wishlist:
+
+- A Read book cannot be added to Wishlist
+- When a Wishlist book is marked as Read, it is removed from Wishlist
 
 ### 📋 Listed Books
 
-The Listed Books page includes:
+The Listed Books page contains:
 
-- 📖 Read Books
-- ❤️ Wishlist Books
-- Number of books in each list
+- 📖 Read Books tab
+- ❤️ Wishlist Books tab
+- Book count for each tab
 - Sorting functionality
+- Book details navigation
 
 ### 🔽 Sorting
 
@@ -92,96 +120,26 @@ Books can be sorted by:
 
 ### 📊 Pages To Read
 
-An interactive chart shows the number of pages for books that have been marked as **Read**.
+The application includes a reading progress page with an interactive bar chart.
 
-Built with **Recharts**.
+The chart displays:
+
+- Book name
+- Total pages
+- Books marked as Read
+
+The chart is built using **Recharts**.
 
 ### ⏮️ Previous / Next Navigation
 
-Navigate between books directly from the book details page using:
+From the book details page, users can easily navigate between books using:
 
 - ← Previous
 - Next →
 
-### 📱 Responsive Design
+### 💾 Persistent Data
 
-The application is optimized for:
-
-- 📱 Mobile
-- 📲 Tablet
-- 💻 Desktop
-
----
-
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| **Next.js** | React framework |
-| **TypeScript** | Type safety |
-| **React** | UI development |
-| **Tailwind CSS** | Styling |
-| **DaisyUI** | UI components |
-| **Recharts** | Reading progress chart |
-| **React Hot Toast** | Notifications |
-| **React Context API** | State management |
-| **localStorage** | Persistent Read/Wishlist data |
-
----
-
-## 📂 Project Structure
+Read and Wishlist data are stored in the browser using:
 
 ```text
-Book-Vibe/
-│
-├── public/
-│   ├── booksData.json
-│   └── book-vibe-icon.svg
-│
-├── src/
-│   │
-│   ├── app/
-│   │   ├── contexts/
-│   │   │   └── BookContext.tsx
-│   │   │
-│   │   ├── books/
-│   │   │   ├── page.tsx
-│   │   │   └── [bookId]/
-│   │   │       ├── page.tsx
-│   │   │       └── loading.tsx
-│   │   │
-│   │   ├── listedbooks/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── page-to-read/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── globals.css
-│   │
-│   ├── assets/
-│   │   ├── type/
-│   │   │   └── bookstype.ts
-│   │   ├── hero_img.jpg
-│   │   └── book.ico
-│   │
-│   └── components/
-│       │
-│       ├── bookdetailes/
-│       │   ├── ReadButton.tsx
-│       │   └── WishlistButton.tsx
-│       │
-│       ├── homepage/
-│       │   ├── Banner.tsx
-│       │   └── Books.tsx
-│       │
-│       └── shared/
-│           ├── BooksCard.tsx
-│           ├── Navber.tsx
-│           └── SortDropdown.tsx
-│
-├── package.json
-├── next.config.ts
-├── tsconfig.json
-└── README.md
+localStorage
