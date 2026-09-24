@@ -1,145 +1,33 @@
 # 📚 Book Vibe
 
-<p align="center">
-  A modern and responsive book listing web application built with Next.js and TypeScript.
-</p>
+Book Vibe is a book listing web app where you can browse books, read their details, mark them as **Read** or add them to a **Wishlist**, and see a chart of the pages you have read.
 
-<p align="center">
-  Browse books, explore book details, manage your Read and Wishlist lists, and track your reading progress.
-</p>
-
-<p align="center">
-  <a href="https://book-vibe-liard-two.vercel.app/">🌐 Live Demo</a>
-  •
-  <a href="https://github.com/mdsolimansikder7/Book-Vibe">💻 GitHub Repository</a>
-</p>
-
----
-
-## 🌐 Live Demo
-
-🚀 **Live Website:**  
-https://book-vibe-liard-two.vercel.app/
-
-💻 **GitHub Repository:**  
-https://github.com/mdsolimansikder7/Book-Vibe
-
----
-
-## 📖 About The Project
-
-**Book Vibe** is a responsive book listing web application where users can discover books, explore detailed information, organize their reading list, and track their reading progress.
-
-Users can:
-
-- Browse available books
-- View detailed book information
-- Mark books as **Read**
-- Add books to their **Wishlist**
-- Sort listed books
-- Navigate between books
-- View their reading progress using a chart
-
-The application uses local JSON data and browser `localStorage`, so **no separate backend or API server is required**.
-
----
+Built with **Next.js**, **TypeScript**, **Tailwind CSS** and **DaisyUI**.
 
 ## ✨ Features
 
-### 🏠 Home Page
+- **Home page** with a hero banner and a preview of 3 books, plus a "View All Books" button
+- **Books page** showing every book in a card layout
+- **Book details page** with cover, author, review, tags, pages, publisher, year and rating
+- **Read / Wishlist buttons** with toast notifications 
+  - A book already marked as Read cannot be added to the Wishlist
+  - Marking a Wishlist book as Read moves it out of the Wishlist
+- **Previous / Next navigation** to move between books on the details page
+- **Listed Books page** with **Read Books** and **Wishlist Books** tabs
+- **Sort By** dropdown: Rating, Number of pages, Publisher year
+- **Pages to Read page** with a bar chart of the pages of every book you have read
+- **Persistent data**: your Read and Wishlist lists are saved in `localStorage`
+- Responsive layout for mobile and desktop
 
-- Beautiful hero/banner section
-- Featured books section
-- Displays a preview of 3 books
-- **View All Books** button
-- Responsive design
+## 🛠️ Tech Stack
 
-### 📚 Books Page
+| Purpose Tool     |                                                 |
+| ---------------- | ----------------------------------------------- |
+| Framework        | [Next.js](https://nextjs.org/) (App Router)     |
+| Language         | TypeScript                                      |
+| Styling          | Tailwind CSS + [DaisyUI](https://daisyui.com/)  |
+| Charts           | [Recharts](https://recharts.org/)               |
+| Notifications    | [react-hot-toast](https://react-hot-toast.com/) |
+| State management | React Context API + `localStorage`              |
 
-- Displays all available books
-- Responsive book card layout
-- Book cover image
-- Book name
-- Author
-- Rating
-- View details option
-
-### 📖 Book Details
-
-Each book has a dedicated details page containing:
-
-- Book cover
-- Book name
-- Author
-- Review
-- Category
-- Tags
-- Total pages
-- Publisher
-- Publishing year
-- Rating
-- Read button
-- Wishlist button
-
-### 📖 Read Books
-
-Users can mark books as **Read**.
-
-Once a book is marked as Read:
-
-- It is saved in `localStorage`
-- It appears in the Read Books section
-- The same book cannot be added to Wishlist
-
-### ❤️ Wishlist
-
-Users can add books to their Wishlist.
-
-The application also handles the relationship between Read and Wishlist:
-
-- A Read book cannot be added to Wishlist
-- When a Wishlist book is marked as Read, it is removed from Wishlist
-
-### 📋 Listed Books
-
-The Listed Books page contains:
-
-- 📖 Read Books tab
-- ❤️ Wishlist Books tab
-- Book count for each tab
-- Sorting functionality
-- Book details navigation
-
-### 🔽 Sorting
-
-Books can be sorted by:
-
-- ⭐ Rating
-- 📄 Number of Pages
-- 📅 Publishing Year
-
-### 📊 Pages To Read
-
-The application includes a reading progress page with an interactive bar chart.
-
-The chart displays:
-
-- Book name
-- Total pages
-- Books marked as Read
-
-The chart is built using **Recharts**.
-
-### ⏮️ Previous / Next Navigation
-
-From the book details page, users can easily navigate between books using:
-
-- ← Previous
-- Next →
-
-### 💾 Persistent Data
-
-Read and Wishlist data are stored in the browser using:
-
-```text
-localStorage
+## 📁 Project Structure
