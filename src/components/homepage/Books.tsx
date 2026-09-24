@@ -2,16 +2,11 @@ import React from "react";
 import Link from "next/link";
 import BooksCard from "../shared/BooksCard";
 import { IBook } from "@/assets/type/bookstype";
+import booksData from "../../../public/booksData.json";
 
-const getBooks = async (): Promise<IBook[]> => {
-  const response = await fetch("http://localhost:3000/booksData.json");
-  const data = await response.json();
-  return data;
-};
-
-const Books = async ({ limit }: { limit?: number }) => {
-  const booksData = await getBooks();
-  const showBooks = limit ? booksData.slice(0, limit) : booksData;
+const Books = ({ limit }: { limit?: number }) => {
+  const allBooks = booksData as IBook[];
+  const showBooks = limit ? allBooks.slice(0, limit) : allBooks;
 
   return (
     <section className="container mx-auto my-[70px] px-4">
